@@ -11,7 +11,7 @@ namespace Main
             }
 
             Player ? player1 = null, player2 = null;
-            bool choice1, choice2;
+            bool choice1 = true, choice2 = true;
 
             // Player 1
             switch(args[0]) {
@@ -25,9 +25,15 @@ namespace Main
                 case "either":
                     player1 = new Either();
                     break;
+                case "retaliator":
+                    player1 = new Retaliator();
+                    break;
+                case "baiter":
+                    player1 = new Baiter();
+                    break;
                 default:
                     Console.WriteLine("Pick a valid player for player 1.\nOptions Include:\n");
-                    Console.WriteLine("bully\nnice\neither");
+                    Console.WriteLine("bully\nnice\neither\nretaliator\nbaiter");
                     Environment.Exit(1);
                     break;
             }
@@ -44,18 +50,24 @@ namespace Main
                 case "either":
                     player2 = new Either();
                     break;
+                case "retaliator":
+                    player2 = new Retaliator();
+                    break;
+                case "baiter":
+                    player2 = new Baiter();
+                    break;
                 default:
                     Console.WriteLine("Pick a valid player for player 2.\nOptions Include:\n");
-                    Console.WriteLine("bully\nnice\neither");
+                    Console.WriteLine("bully\nnice\neither\nretaliator\nbaiter");
                     Environment.Exit(1);
                     break;
             }
+
             
             for(int i = 0; i < 400; i++) {
-                
-                choice1 = player1.choice(true, true);
-                choice2 = player2.choice(true, true);
 
+                choice1 = player1.choice(choice2);
+                choice2 = player2.choice(choice1);
 
                 if(choice1 && choice2) {
                     player1.points += 5;
