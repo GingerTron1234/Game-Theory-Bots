@@ -2,6 +2,10 @@ namespace Main
 {
     // If the other bot retaliates twice it will comply before going back to retaliating
     class Baiter : Player {
+
+        public Baiter() {
+            name = "Baiter";
+        }
         private int defectCount = 0;
 
         public override bool choice(bool oChoice) {

@@ -19,8 +19,8 @@ namespace Main
                 case "bully":
                     player1 = new Bully();
                     break;
-                case "nice":
-                    player1 = new Nice();
+                case "smiley":
+                    player1 = new Smiley();
                     break;
                 case "either":
                     player1 = new Either();
@@ -31,9 +31,12 @@ namespace Main
                 case "baiter":
                     player1 = new Baiter();
                     break;
+                case "vengeance":
+                    player1 = new Vengeance();
+                    break;
                 default:
                     Console.WriteLine("Pick a valid player for player 1.\nOptions Include:\n");
-                    Console.WriteLine("bully\nnice\neither\nretaliator\nbaiter");
+                    Console.WriteLine("bully\nsmiley\neither\nretaliator\nbaiter\nvengeance");
                     Environment.Exit(1);
                     break;
             }
@@ -44,8 +47,8 @@ namespace Main
                 case "bully":
                     player2 = new Bully();
                     break;
-                case "nice":
-                    player2 = new Nice();
+                case "smiley":
+                    player2 = new Smiley();
                     break;
                 case "either":
                     player2 = new Either();
@@ -56,9 +59,12 @@ namespace Main
                 case "baiter":
                     player2 = new Baiter();
                     break;
+                case "vengeance":
+                    player2 = new Vengeance();
+                    break;
                 default:
                     Console.WriteLine("Pick a valid player for player 2.\nOptions Include:\n");
-                    Console.WriteLine("bully\nnice\neither\nretaliator\nbaiter");
+                    Console.WriteLine("bully\nsmiley\neither\nretaliator\nbaiter\nvengeance");
                     Environment.Exit(1);
                     break;
             }
@@ -80,8 +86,8 @@ namespace Main
                 }
             }
 
-            Console.WriteLine("Player 1 Score: " + player1.points);
-            Console.WriteLine("Player 2 Score: " + player2.points);
+            Console.WriteLine(player1.name + " Score: " + player1.points);
+            Console.WriteLine(player2.name + " Score: " + player2.points);
         }
     }
 }

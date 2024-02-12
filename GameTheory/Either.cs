@@ -3,6 +3,9 @@ namespace Main
     // Switches between complying and defecting each round
     class Either : Player {
 
+        public Either() {
+            name = "Either";
+        }
         private int round = 0;
 
         public override bool choice(bool oChoice) {
